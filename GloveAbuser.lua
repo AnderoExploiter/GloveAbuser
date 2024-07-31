@@ -135,3 +135,31 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local StunSection = MainTab:AddSection({
+	Name = "Stun Glove (Use and wait 10 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Stun",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Stun"
+            then
+
+                local args = {
+                    [1] = game:GetService("Players").LocalPlayer.Character.Stun
+                }
+                
+                game:GetService("ReplicatedStorage").StunR:FireServer(unpack(args))
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Stun Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

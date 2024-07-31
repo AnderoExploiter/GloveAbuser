@@ -173,12 +173,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "L.O.L.B.O.M.B"
             then
-
-                local args = {
-                    [1] = game:GetService("Players").LocalPlayer.Character.Stun
-                }
                 
-                game:GetService("ReplicatedStorage").StunR:FireServer(unpack(args))
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
 
             else
 

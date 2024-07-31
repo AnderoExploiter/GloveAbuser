@@ -30,7 +30,7 @@ MainTab:AddButton({
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })
-
+            end
   	end    
 })
 
@@ -48,6 +48,6 @@ MainTab:AddButton({
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })
-
+            end
   	end    
 })

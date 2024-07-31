@@ -13,6 +13,41 @@ local SlapSection = MainTab:AddSection({
 })
 
 local SlapSection = MainTab:AddSection({
-	Name = "Slap Gloves"
+	Name = "Diamond Glove"
 })
 
+MainTab:AddButton({
+	Name = "Activate RockMode!",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove == "Diamond"
+            then
+                game:GetService("ReplicatedStorage").Rockmode:FireServer()
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Diamond Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "DeActivate RockMode!",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove == "Diamond"
+            then
+                game:GetService("ReplicatedStorage").DeactivateRockmode:FireServer()
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Diamond Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+  	end    
+})

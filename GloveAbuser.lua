@@ -73,3 +73,25 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local BrickSection = MainTab:AddSection({
+	Name = "Brick Glove (Use and wait 2 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Brick (You need hold the Glove)",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Brick"
+            then
+                game:GetService("ReplicatedStorage").ZZZZZZZSleep:FireServer()
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Brick Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

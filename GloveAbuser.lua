@@ -30,7 +30,7 @@ TeleportTab:AddButton({
 	Callback = function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-800,328,-2.5)
   	end    
-}
+})
 
 local SlapSection = MainTab:AddSection({
 	Name = "Slap Gloves"

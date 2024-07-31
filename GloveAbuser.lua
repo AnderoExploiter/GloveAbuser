@@ -95,3 +95,43 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local GhostSection = MainTab:AddSection({
+	Name = "Ghost Glove"
+})
+
+MainTab:AddButton({
+	Name = "Enter Ghost",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost"
+            then
+                game:GetService("ReplicatedStorage").Ghostinvisibilityactivated:FireServer()
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Ghost Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+MainTab:AddButton({
+	Name = "Deactivate Ghost",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost"
+            then
+                game:GetService("ReplicatedStorage").Ghostinvisibilitydeactivated:FireServer()
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Ghost Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

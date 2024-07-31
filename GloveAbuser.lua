@@ -12,7 +12,7 @@ local SlapSection = MainTab:AddSection({
 	Name = "Slap Gloves"
 })
 
-local SlapSection = MainTab:AddSection({
+local DiamondSection = MainTab:AddSection({
 	Name = "Diamond Glove"
 })
 
@@ -45,6 +45,28 @@ MainTab:AddButton({
                 OrionLib:MakeNotification({
                     Name = "Error!",
                     Content = "Equip Diamond Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local ZZZZZZZSection = MainTab:AddSection({
+	Name = "ZZZZZZZ Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate ZZZZZZZ",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ"
+            then
+                game:GetService("ReplicatedStorage").ZZZZZZZSleep:FireServer()
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip ZZZZZZZ Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })

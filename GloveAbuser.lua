@@ -83,7 +83,7 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Brick"
             then
-                game:GetService("ReplicatedStorage").ZZZZZZZSleep:FireServer()
+                game:GetService("ReplicatedStorage").lbrick:FireServer()
             else
 
                 OrionLib:MakeNotification({

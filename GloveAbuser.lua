@@ -8,6 +8,30 @@ local MainTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local TeleportTab = Window:MakeTab({
+	Name = "Teleport",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TPSection = TeleportTab:AddSection({
+	Name = "Teleports"
+})
+
+TeleportTab:AddButton({
+	Name = "Arena",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Origo.CFrame * CFrame.new(0,-5,0)
+  	end    
+})
+
+TeleportTab:AddButton({
+	Name = "Lobby",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-800,328,-2.5)
+  	end    
+}
+
 local SlapSection = MainTab:AddSection({
 	Name = "Slap Gloves"
 })

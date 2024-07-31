@@ -156,7 +156,35 @@ MainTab:AddButton({
 
                 OrionLib:MakeNotification({
                     Name = "Error!",
-                    Content = "Equip Stun Glove",
+                    Content = "Equip Stun Glove (You need hold the glove)",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local LOLBOMBSection = MainTab:AddSection({
+	Name = "L.O.L.B.O.M.B Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate L.O.L.B.O.M.B",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "L.O.L.B.O.M.B"
+            then
+
+                local args = {
+                    [1] = game:GetService("Players").LocalPlayer.Character.Stun
+                }
+                
+                game:GetService("ReplicatedStorage").StunR:FireServer(unpack(args))
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip L.O.L.B.O.M.B Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })

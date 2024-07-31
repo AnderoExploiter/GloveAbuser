@@ -19,7 +19,7 @@ local SlapSection = MainTab:AddSection({
 MainTab:AddButton({
 	Name = "Activate RockMode!",
 	Callback = function()
-      		if game.Players.LocalPlayer.leaderstats.Glove == "Diamond"
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond"
             then
                 game:GetService("ReplicatedStorage").Rockmode:FireServer()
             else
@@ -37,7 +37,7 @@ MainTab:AddButton({
 MainTab:AddButton({
 	Name = "DeActivate RockMode!",
 	Callback = function()
-      		if game.Players.LocalPlayer.leaderstats.Glove == "Diamond"
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond"
             then
                 game:GetService("ReplicatedStorage").DeactivateRockmode:FireServer()
             else

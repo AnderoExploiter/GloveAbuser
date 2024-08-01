@@ -214,7 +214,7 @@ MainTab:AddButton({
 })
 
 local FortSection = MainTab:AddSection({
-	Name = "Fort Glove"
+	Name = "Fort Glove (Use and wait 3.5 Seconds or get kicked)"
 })
 
 MainTab:AddButton({
@@ -237,3 +237,26 @@ MainTab:AddButton({
   	end    
 })
 
+local PusherSection = MainTab:AddSection({
+	Name = "Pusher Glove (Use and wait 5.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Pusher",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Pusher"
+            then
+
+                game:GetService("ReplicatedStorage").PusherWall:FireServer()
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Pusher Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

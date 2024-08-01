@@ -310,7 +310,7 @@ MainTab:AddButton({
 })
 
 local DefenseSection = MainTab:AddSection({
-	Name = "Defense Glove (Use and wait 0.25 Seconds or get kicked)"
+	Name = "Defense Glove"
 })
 
 MainTab:AddButton({

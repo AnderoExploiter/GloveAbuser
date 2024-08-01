@@ -287,7 +287,7 @@ MainTab:AddButton({
 })
 
 local MRSection = MainTab:AddSection({
-	Name = "MR Glove)"
+	Name = "MR Glove"
 })
 
 MainTab:AddButton({
@@ -303,6 +303,31 @@ MainTab:AddButton({
                 OrionLib:MakeNotification({
                     Name = "Error!",
                     Content = "Equip MR Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local DefenseSection = MainTab:AddSection({
+	Name = "Defense Glove (Use and wait 0.25 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Defense",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Defense"
+            then
+
+                game:GetService("ReplicatedStorage").Barrier:FireServer()
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Defense Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })

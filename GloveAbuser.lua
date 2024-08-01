@@ -360,13 +360,14 @@ MainTab:AddButton({
 
 
 local ReverseSection = MainTab:AddSection({
-	Name = "woah Glove (Use and wait 5.7 Seconds or get kicked)"
+	Name = "woah Glove (Use and wait 5.1 Seconds or get kicked)"
 })
 
 MainTab:AddButton({
 	Name = "Activate woah",
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "woah"
+
             then
 
                 game:GetService("ReplicatedStorage").VineThud:FireServer()

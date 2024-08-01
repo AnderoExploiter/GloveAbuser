@@ -212,3 +212,29 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local LOLBOMBSection = MainTab:AddSection({
+	Name = "bus Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate bus (You need hold the glove)",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "bus"
+            then
+
+                while wait(5.1) do
+                    game:GetService("ReplicatedStorage").busmoment:FireServer()
+                end
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip L.O.L.B.O.M.B Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

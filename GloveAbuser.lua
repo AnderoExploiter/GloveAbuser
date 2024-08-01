@@ -333,3 +333,27 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local ReverseSection = MainTab:AddSection({
+	Name = "Reverse Glove (Use and wait 5.7 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Reverse",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Reverse"
+            then
+
+                game:GetService("ReplicatedStorage"):WaitForChild("ReverseAbility"):FireServer()
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Reverse Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

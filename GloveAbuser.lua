@@ -261,3 +261,27 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local MailSection = MainTab:AddSection({
+	Name = "Mail Glove (Use and wait 3.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Mail",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Mail"
+            then
+
+                game:GetService("ReplicatedStorage").MailSend:FireServer()
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Mail Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

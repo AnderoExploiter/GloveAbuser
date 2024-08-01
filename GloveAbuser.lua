@@ -4,7 +4,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Glove Abuser", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local MainTab = Window:MakeTab({
-	Name = "Main",
+	Name = "Ability User",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -213,28 +213,27 @@ MainTab:AddButton({
   	end    
 })
 
-local LOLBOMBSection = MainTab:AddSection({
-	Name = "bus Glove"
+local FortSection = MainTab:AddSection({
+	Name = "Fort Glove"
 })
 
 MainTab:AddButton({
-	Name = "Activate bus (You need hold the glove)",
+	Name = "Activate Fort",
 	Callback = function()
-      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "bus"
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Fort"
             then
 
-                while wait(5.1) do
-                    game:GetService("ReplicatedStorage").busmoment:FireServer()
-                end
+                game:GetService("ReplicatedStorage").Fortlol:FireServer()
 
             else
 
                 OrionLib:MakeNotification({
                     Name = "Error!",
-                    Content = "Equip L.O.L.B.O.M.B Glove",
+                    Content = "Equip Fort Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })
             end
   	end    
 })
+

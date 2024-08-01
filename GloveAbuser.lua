@@ -285,3 +285,27 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local MRSection = MainTab:AddSection({
+	Name = "MR Glove)"
+})
+
+MainTab:AddButton({
+	Name = "Activate MR",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "MR"
+            then
+
+                game:GetService("ReplicatedStorage").Spherify:FireServer()
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip MR Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

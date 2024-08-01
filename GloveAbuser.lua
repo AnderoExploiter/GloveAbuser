@@ -100,7 +100,7 @@ MainTab:AddButton({
 })
 
 local BrickSection = MainTab:AddSection({
-	Name = "Brick Glove (Use and wait 2 Seconds or get kicked)"
+	Name = "Brick Glove (Use and wait 1.1 Seconds or get kicked)"
 })
 
 MainTab:AddButton({
@@ -109,6 +109,13 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Brick"
             then
                 game:GetService("ReplicatedStorage").lbrick:FireServer()
+                wait(1.1)
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
             else
 
                 OrionLib:MakeNotification({
@@ -162,7 +169,7 @@ MainTab:AddButton({
 })
 
 local StunSection = MainTab:AddSection({
-	Name = "Stun Glove (Use and wait 10 Seconds or get kicked)"
+	Name = "Stun Glove (Use and wait 10.1 Seconds or get kicked)"
 })
 
 MainTab:AddButton({
@@ -176,7 +183,13 @@ MainTab:AddButton({
                 }
                 
                 game:GetService("ReplicatedStorage").StunR:FireServer(unpack(args))
-
+                wait(10.1)
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
             else
 
                 OrionLib:MakeNotification({
@@ -224,7 +237,13 @@ MainTab:AddButton({
             then
 
                 game:GetService("ReplicatedStorage").Fortlol:FireServer()
-
+                wait(3.5)
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
             else
 
                 OrionLib:MakeNotification({
@@ -248,7 +267,13 @@ MainTab:AddButton({
             then
 
                 game:GetService("ReplicatedStorage").PusherWall:FireServer()
-
+                wait(5.1)
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
             else
 
                 OrionLib:MakeNotification({
@@ -272,7 +297,13 @@ MainTab:AddButton({
             then
 
                 game:GetService("ReplicatedStorage").MailSend:FireServer()
-
+                wait(3.1)
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
             else
 
                 OrionLib:MakeNotification({
@@ -345,7 +376,13 @@ MainTab:AddButton({
             then
 
                 game:GetService("ReplicatedStorage"):WaitForChild("ReverseAbility"):FireServer()
-
+                wait(5.7)
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
             else
 
                 OrionLib:MakeNotification({

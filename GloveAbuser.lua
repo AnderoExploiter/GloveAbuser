@@ -693,3 +693,37 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local ShieldSection = MainTab:AddSection({
+	Name = "Shield Glove (Use and wait 3.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Shield",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Shield"
+
+            then
+
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                wait(3.1)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Shield Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

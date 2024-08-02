@@ -217,7 +217,7 @@ MainTab:AddButton({
             else
 
                 OrionLib:MakeNotification({
-                    Name = "Error",
+                    Name = "Error!",
                     Content = "Equip L.O.L.B.O.M.B Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5

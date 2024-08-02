@@ -727,3 +727,64 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local PingPongSection = MainTab:AddSection({
+	Name = "Ping Pong Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate Ping Pong (Some cooldown)",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ping Pong"
+
+            then
+
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                task.wait()
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Ping Pong Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local BallerSection = MainTab:AddSection({
+	Name = "Baller Glove (Use and wait 4.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Baller",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Baller"
+
+            then
+
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                wait(4.1)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Baller Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

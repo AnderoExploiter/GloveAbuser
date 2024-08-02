@@ -627,7 +627,7 @@ local TrackSection = MainTab:AddSection({
 })
 
 MainTab:AddButton({
-	Name = "Activate Track (You need hold the glove)",
+	Name = "Activate Track (You need hold the glove) (BUGGY)",
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Track"
 
@@ -653,6 +653,40 @@ MainTab:AddButton({
                 OrionLib:MakeNotification({
                     Name = "Error!",
                     Content = "Equip Track Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local TableflipSection = MainTab:AddSection({
+	Name = "Tableflip Glove (Use and wait 3.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Tableflip",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Tableflip"
+
+            then
+
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                wait(3.1)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Tableflip Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })

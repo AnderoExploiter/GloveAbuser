@@ -396,7 +396,7 @@ MainTab:AddButton({
 })
 
 
-local ReverseSection = MainTab:AddSection({
+local woahSection = MainTab:AddSection({
 	Name = "woah Glove (Use and wait 5.1 Seconds or get kicked)"
 })
 
@@ -409,6 +409,39 @@ MainTab:AddButton({
 
                 game:GetService("ReplicatedStorage").VineThud:FireServer()
                 wait(5.1)
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip woah Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local AdiosSection = MainTab:AddSection({
+	Name = "woah Glove (Use and wait 5.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Adios",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Adios"
+
+            then
+
+                game:GetService("ReplicatedStorage").AdiosActivated:FireServer()
+                wait(8.3)
                 OrionLib:MakeNotification({
                     Name = "Restored",
                     Content = "You can use ability",

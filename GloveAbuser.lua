@@ -587,3 +587,37 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local CoilSection = MainTab:AddSection({
+	Name = "el gato Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate el gato",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "el gato"
+
+            then
+
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                task.wait()
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip el gato Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

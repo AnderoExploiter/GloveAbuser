@@ -494,3 +494,36 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local RockySection = MainTab:AddSection({
+	Name = "Rocky Glove (Use and wait 7.5 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Engineer",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Rocky"
+
+            then
+
+                game:GetService("ReplicatedStorage").RockyShoot:FireServer()
+                wait(7.5)
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Rocky Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

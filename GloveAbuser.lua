@@ -542,7 +542,7 @@ MainTab:AddButton({
                 game:GetService("ReplicatedStorage"):WaitForChild("GeneralAbility"):FireServer(game:GetService("Players").LocalPlayer.Character.Coil)
                 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
                 wait(3.1)
-                
+
                 OrionLib:MakeNotification({
                     Name = "Restored",
                     Content = "You can use ability",
@@ -556,6 +556,31 @@ MainTab:AddButton({
                 OrionLib:MakeNotification({
                     Name = "Error!",
                     Content = "Equip Coil Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local PhantomSection = MainTab:AddSection({
+	Name = "Phantom Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate Phantom",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Phantom"
+
+            then
+
+                game:GetService("ReplicatedStorage").PhantomDash:InvokeServer(workspace[game.Players.LocalPlayer.Name].Phantom) 
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Phantom Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })

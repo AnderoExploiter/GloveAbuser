@@ -500,7 +500,7 @@ local RockySection = MainTab:AddSection({
 })
 
 MainTab:AddButton({
-	Name = "Activate Engineer",
+	Name = "Activate Rocky",
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Rocky"
 

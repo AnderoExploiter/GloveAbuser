@@ -788,3 +788,38 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local SlicerSection = MainTab:AddSection({
+	Name = "Slicer Glove (Use and wait 5.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Slicer",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Slicer"
+
+            then
+
+                game:GetService("ReplicatedStorage").Slicer:FireServer("sword")
+                game:GetService("ReplicatedStorage").Slicer:FireServer("slash", game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, Vector3.new())
+                wait(5.1)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Slicer Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

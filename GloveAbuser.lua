@@ -823,3 +823,30 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local ThorSection = MainTab:AddSection({
+	Name = "Thor Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate Thor (Some cooldown)",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Thor"
+
+            then
+
+                game:GetService("ReplicatedStorage").ThorAbility:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+                task.wait()
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Thor Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

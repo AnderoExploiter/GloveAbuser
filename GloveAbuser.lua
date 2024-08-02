@@ -588,7 +588,7 @@ MainTab:AddButton({
   	end    
 })
 
-local CoilSection = MainTab:AddSection({
+local elgatoSection = MainTab:AddSection({
 	Name = "el gato Glove"
 })
 
@@ -615,6 +615,44 @@ MainTab:AddButton({
                 OrionLib:MakeNotification({
                     Name = "Error!",
                     Content = "Equip el gato Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local TrackSection = MainTab:AddSection({
+	Name = "Track Glove (Use and wait 10.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Track (You need hold the glove)",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Track"
+
+            then
+
+                local players = game.Players:GetChildren()
+                local RandomPlayer = players[math.random(1, #players)]
+                repeat RandomPlayer = players[math.random(1, #players)] until RandomPlayer ~= game.Players.LocalPlayer and RandomPlayer.Character:FindFirstChild("entered") and RandomPlayer.Character:FindFirstChild("rock") == nil
+                Target = RandomPlayer
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer(Target.Character)
+                wait(10.1)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Track Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })

@@ -430,7 +430,7 @@ MainTab:AddButton({
 })
 
 local AdiosSection = MainTab:AddSection({
-	Name = "woah Glove (Use and wait 5.1 Seconds or get kicked)"
+	Name = "Adios Glove (Use and wait 8.31 Seconds or get kicked)"
 })
 
 MainTab:AddButton({

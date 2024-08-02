@@ -918,3 +918,73 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local BlackholeSection = MainTab:AddSection({
+	Name = "Meteor Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate Blackhole",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Blackhole"
+
+            then
+
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                task.wait()           
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Blackhole Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local GodsHandSection = MainTab:AddSection({
+	Name = "God's Hand Glove (Wait 50.1 cooldown or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate God's Hand",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "God's Hand"
+
+            then
+
+                game:GetService("ReplicatedStorage").TimestopJump:FireServer()
+                game:GetService("ReplicatedStorage").Timestopchoir:FireServer()
+                game:GetService("ReplicatedStorage").Timestop:FireServer()
+                wait(50.1)          
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip God's Hand Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

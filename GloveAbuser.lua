@@ -884,3 +884,37 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local MeteorSection = MainTab:AddSection({
+	Name = "Meteor Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate Meteor",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Meteor"
+
+            then
+
+                game:GetService("ReplicatedStorage"):WaitForChild("GeneralAbility"):FireServer()
+                task.wait()             
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Meteor Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

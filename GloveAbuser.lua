@@ -850,3 +850,37 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local ParrySection = MainTab:AddSection({
+	Name = "Parry Glove"
+})
+
+MainTab:AddButton({
+	Name = "Activate Parry",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Parry"
+
+            then
+
+                game.ReplicatedStorage.GeneralAbility:FireServer()
+                task.wait()                
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Parry Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

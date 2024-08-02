@@ -461,3 +461,36 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local EngineerSection = MainTab:AddSection({
+	Name = "Engineer Glove (Use and wait 5.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Engineer",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Engineer"
+
+            then
+
+                game:GetService("ReplicatedStorage").Sentry:FireServer()
+                wait(5.1)
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Engineer Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

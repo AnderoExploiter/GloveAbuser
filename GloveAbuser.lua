@@ -527,3 +527,38 @@ MainTab:AddButton({
             end
   	end    
 })
+
+local CoilSection = MainTab:AddSection({
+	Name = "Coil Glove (Use and wait 3.1 Seconds or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate Coil",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Coil"
+
+            then
+
+                game:GetService("ReplicatedStorage"):WaitForChild("GeneralAbility"):FireServer(game:GetService("Players").LocalPlayer.Character.Coil)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
+                wait(3.1)
+                
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Coil Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

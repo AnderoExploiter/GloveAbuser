@@ -1059,3 +1059,36 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local busSection = BadgesGloveTab:AddSection({
+	Name = "bus Glove (Wait 5.1 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate bus",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "bus"
+
+            then
+                game:GetService("ReplicatedStorage").busmoment:FireServer()
+                wait(5.1)        
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip bus Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

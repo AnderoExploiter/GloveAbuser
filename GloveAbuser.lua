@@ -1125,3 +1125,36 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local BubbleSection = BadgesGloveTab:AddSection({
+	Name = "Bubble Glove (Wait 3.1 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Bubble",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "PhaBubblese"
+
+            then
+                game:GetService("ReplicatedStorage").BubbleThrow:FireServer()
+                wait(3.1)   
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Bubble Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

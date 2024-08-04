@@ -1263,7 +1263,7 @@ local SlappleSection = BadgesGloveTab:AddSection({
 })
 
 BadgesGloveTab:AddButton({
-	Name = "Activate Slapple",
+	Name = "Activate Slapple (Hold The Glove)",
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Slapple"
 
@@ -1284,6 +1284,39 @@ BadgesGloveTab:AddButton({
                 OrionLib:MakeNotification({
                     Name = "Error!",
                     Content = "Equip Slapple Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local DominanceSection = BadgesGloveTab:AddSection({
+	Name = "Dominance Glove (Wait 3.1 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Dominance",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Dominance"
+
+            then
+                game:GetService("ReplicatedStorage").DominanceAc:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
+                wait(3.1)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Dominance Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })

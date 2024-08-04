@@ -25,14 +25,17 @@ local TPSection = TeleportTab:AddSection({
 TeleportTab:AddButton({
 	Name = "Lobby",
 	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/Teleports/LobbyTP.lua"))()
+        --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/Teleports/LobbyTP.lua"))()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-800,328,-2.5)
   	end    
 })
 
 TeleportTab:AddButton({
 	Name = "Arena",
 	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/Teleports/ArenaTP.lua"))()
+        --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/Teleports/ArenaTP.lua"))()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Origo.CFrame * CFrame.new(0,-5,0)
+        
   	end    
 })
 
@@ -49,7 +52,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond"
             then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateRockMode.lua"))()
+                game:GetService("ReplicatedStorage").Rockmode:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateRockMode.lua"))()
             else
                 OrionLib:MakeNotification({
                     Name = "Error!",
@@ -66,7 +70,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond"
             then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/DeactivateRockMode.lua"))()
+                game:GetService("ReplicatedStorage").DeactivateRockmode:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/DeactivateRockMode.lua"))()
             else
 
                 OrionLib:MakeNotification({
@@ -88,7 +93,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ"
             then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateZZZZZZZ.lua"))()
+                game:GetService("ReplicatedStorage").ZZZZZZZSleep:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateZZZZZZZ.lua"))()
             else
 
                 OrionLib:MakeNotification({
@@ -110,7 +116,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Brick"
             then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateBrick.lua"))()
+                game:GetService("ReplicatedStorage").lbrick:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateBrick.lua"))()
                 wait(1.1)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -139,7 +146,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost"
             then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/EnterGhost.lua"))()
+                game:GetService("ReplicatedStorage").Ghostinvisibilityactivated:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/EnterGhost.lua"))()
             else
 
                 OrionLib:MakeNotification({
@@ -157,7 +165,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost"
             then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/DeactivateGhost.lua"))()
+                game:GetService("ReplicatedStorage").Ghostinvisibilitydeactivated:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/DeactivateGhost.lua"))()
             else
 
                 OrionLib:MakeNotification({
@@ -179,8 +188,11 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Stun"
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateStun.lua"))()
+                local args = {
+                    [1] = game:GetService("Players").LocalPlayer.Character.Stun
+                    }  
+                    game:GetService("ReplicatedStorage").StunR:FireServer(unpack(args))
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateStun.lua"))()
                 wait(10.1)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -209,8 +221,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "L.O.L.B.O.M.B"
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateLOLBOMB.lua"))()
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateLOLBOMB.lua"))()
 
             else
 
@@ -233,8 +245,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Fort"
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateFort.lua"))()
+                game:GetService("ReplicatedStorage").Fortlol:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateFort.lua"))()
                 wait(3.5)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -263,8 +275,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Pusher"
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivatePusher.lua"))()
+                game:GetService("ReplicatedStorage").PusherWall:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivatePusher.lua"))()
                 wait(5.1)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -293,8 +305,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Mail"
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateMail.lua"))()
+                game:GetService("ReplicatedStorage").MailSend:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateMail.lua"))()
                 wait(3.1)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -323,8 +335,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "MR"
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateMR.lua"))()
+                game:GetService("ReplicatedStorage").Spherify:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateMR.lua"))()
 
             else
 
@@ -347,8 +359,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Defense"
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateDefense.lua"))()
+                game:GetService("ReplicatedStorage").Barrier:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateDefense.lua"))()
 
 
             else
@@ -372,8 +384,8 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Reverse"
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateReverse.lua"))()
+                game:GetService("ReplicatedStorage"):WaitForChild("ReverseAbility"):FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateReverse.lua"))()
                 wait(5.7)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -403,8 +415,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "woah"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateWoah.lua"))()
+                game:GetService("ReplicatedStorage").VineThud:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateWoah.lua"))()
                 wait(5.1)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -436,8 +448,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Adios"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateAdios.lua"))()
+                game:GetService("ReplicatedStorage").AdiosActivated:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateAdios.lua"))()
                 wait(8.3)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -469,8 +481,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Engineer"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateEngeener.lua"))()
+                game:GetService("ReplicatedStorage").Sentry:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateEngeener.lua"))()
                 wait(5.1)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -502,8 +514,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Rocky"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateRocky.lua"))()
+                game:GetService("ReplicatedStorage").RockyShoot:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateRocky.lua"))()
                 wait(7.5)
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -535,8 +547,9 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Coil"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateCoil.lua"))()
+                game:GetService("ReplicatedStorage"):WaitForChild("GeneralAbility"):FireServer(game:GetService("Players").LocalPlayer.Character.Coil)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Walkspeed
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateCoil.lua"))()
                 wait(3.1)
 
                 OrionLib:MakeNotification({
@@ -569,8 +582,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Phantom"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivatePhantom.lua"))()
+                game:GetService("ReplicatedStorage").PhantomDash:InvokeServer(workspace[game.Players.LocalPlayer.Name].Phantom)
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivatePhantom.lua"))()
 
             else
 
@@ -594,8 +607,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "el gato"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/Activateelgato.lua"))()
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/Activateelgato.lua"))()
                 task.wait()
 
                 OrionLib:MakeNotification({
@@ -628,8 +641,12 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Track"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateTrack.lua"))()
+                local players = game.Players:GetChildren()
+                local RandomPlayer = players[math.random(1, #players)]
+                repeat RandomPlayer = players[math.random(1, #players)] until RandomPlayer ~= game.Players.LocalPlayer and RandomPlayer.Character:FindFirstChild("entered") and RandomPlayer.Character:FindFirstChild("rock") == nil
+                Target = RandomPlayer
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer(Target.Character)
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateTrack.lua"))()
                 wait(10.1)
 
                 OrionLib:MakeNotification({
@@ -662,8 +679,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Tableflip"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
                 wait(3.1)
 
                 OrionLib:MakeNotification({
@@ -696,8 +713,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Shield"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
                 wait(3.1)
 
                 OrionLib:MakeNotification({
@@ -730,8 +747,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ping Pong"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
                 task.wait()
 
 
@@ -757,8 +774,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Baller"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
                 wait(4.1)
 
                 OrionLib:MakeNotification({
@@ -791,8 +808,9 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Slicer"
 
             then
-                
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateSlicer.lua"))()
+                game:GetService("ReplicatedStorage").Slicer:FireServer("sword")
+                game:GetService("ReplicatedStorage").Slicer:FireServer("slash", game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame, Vector3.new())
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateSlicer.lua"))()
                 wait(5.1)
 
                 OrionLib:MakeNotification({
@@ -825,8 +843,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Thor"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateThor.lua"))()
+                game:GetService("ReplicatedStorage").ThorAbility:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateThor.lua"))()
                 task.wait()
 
 
@@ -852,8 +870,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Parry"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
                 task.wait()                
 
                 OrionLib:MakeNotification({
@@ -886,8 +904,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Meteor"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
                 task.wait()             
 
                 OrionLib:MakeNotification({
@@ -920,8 +938,8 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Blackhole"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
                 task.wait()           
 
                 OrionLib:MakeNotification({
@@ -954,8 +972,10 @@ MainTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "God's Hand"
 
             then
-
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/godsHandActivate.lua"))()
+                game:GetService("ReplicatedStorage").TimestopJump:FireServer()
+                game:GetService("ReplicatedStorage").Timestopchoir:FireServer()
+                game:GetService("ReplicatedStorage").Timestop:FireServer()
+                --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/godsHandActivate.lua"))()
                 wait(50.1)          
 
                 OrionLib:MakeNotification({

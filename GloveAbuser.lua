@@ -1031,7 +1031,7 @@ local REDACTEDSection = MainTab:AddSection({
 	Name = "[REDACTED] Glove (Wait 5.1 cooldown or get kicked)"
 })
 
-MainTab:AddButton({
+BadgesGloveTab:AddButton({
 	Name = "Activate [REDACTED]",
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "[REDACTED]"

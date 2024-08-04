@@ -1356,3 +1356,36 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local KrakenSection = BadgesGloveTab:AddSection({
+	Name = "Kraken Glove (Wait 5 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Kraken (Hold The Glove)",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Kraken"
+
+            then
+                game:GetService("ReplicatedStorage").KrakenArm:FireServer()
+                wait(5)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Kraken Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

@@ -1170,7 +1170,7 @@ BadgesGloveTab:AddButton({
 
             then
                 game:GetService("ReplicatedStorage").Shards:FireServer()
-                wait(4.1))   
+                wait(4.1)  
 
                 OrionLib:MakeNotification({
                     Name = "Restored",

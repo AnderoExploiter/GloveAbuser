@@ -1027,7 +1027,7 @@ BadgesGloveTab:AddButton({
   	end    
 })
 
-local REDACTEDSection = MainTab:AddSection({
+local REDACTEDSection = BadgesGloveTab:AddSection({
 	Name = "[REDACTED] Glove (Wait 5.1 cooldown or get kicked)"
 })
 

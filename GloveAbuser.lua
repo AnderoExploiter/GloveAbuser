@@ -1158,3 +1158,36 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local ShardSection = BadgesGloveTab:AddSection({
+	Name = "Shard Glove (Wait 4.1 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Shard",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Shard"
+
+            then
+                game:GetService("ReplicatedStorage").Shards:FireServer()
+                wait(4.1))   
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Shard Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

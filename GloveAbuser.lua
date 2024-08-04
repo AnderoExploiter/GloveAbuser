@@ -1230,7 +1230,7 @@ local TrapSection = BadgesGloveTab:AddSection({
 })
 
 BadgesGloveTab:AddButton({
-	Name = "Activate Trap",
+	Name = "Activate Trap (Hold The glove)",
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Trap"
 

@@ -1224,3 +1224,36 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local TrapSection = BadgesGloveTab:AddSection({
+	Name = "Trap Glove (Wait 3.1 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Trap",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Trap"
+
+            then
+                game:GetService("ReplicatedStorage").funnyhilariousbeartrap:FireServer()
+                wait(3.1) 
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Trap Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

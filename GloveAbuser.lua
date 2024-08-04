@@ -1133,7 +1133,7 @@ local BubbleSection = BadgesGloveTab:AddSection({
 BadgesGloveTab:AddButton({
 	Name = "Activate Bubble",
 	Callback = function()
-      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "PhaBubblese"
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Bubble"
 
             then
                 game:GetService("ReplicatedStorage").BubbleThrow:FireServer()

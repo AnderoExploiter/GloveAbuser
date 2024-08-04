@@ -1191,3 +1191,36 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local bobSection = BadgesGloveTab:AddSection({
+	Name = "bob Glove (Wait 9 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate bob",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "bob"
+
+            then
+                game:GetService("ReplicatedStorage").bob:FireServer()
+                wait(9)  
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip bob Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

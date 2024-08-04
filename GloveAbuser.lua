@@ -12,6 +12,12 @@ local MainTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local BadgesGloveTab = Window:MakeTab({
+	Name = "Badges Ability User",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 local TeleportTab = Window:MakeTab({
 	Name = "Teleport",
 	Icon = "rbxassetid://4483345998",
@@ -991,6 +997,29 @@ MainTab:AddButton({
                 OrionLib:MakeNotification({
                     Name = "Error!",
                     Content = "Equip God's Hand Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local MEGAROCKSection = BadgesGloveTab:AddSection({
+	Name = "MEGAROCK Glove"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate MEGAROCK",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "MEGAROCK"
+
+            then
+                game:GetService("ReplicatedStorage"):WaitForChild("Rockmode"):FireServer()
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip MEGAROCK Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })

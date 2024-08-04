@@ -1026,3 +1026,36 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local REDACTEDSection = MainTab:AddSection({
+	Name = "[REDACTED] Glove (Wait 5.1 cooldown or get kicked)"
+})
+
+MainTab:AddButton({
+	Name = "Activate [REDACTED]",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "[REDACTED]"
+
+            then
+                game:GetService("ReplicatedStorage").Well:FireServer()
+                wait(5.1)         
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip [REDACTED] Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

@@ -1092,3 +1092,36 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local PhaseSection = BadgesGloveTab:AddSection({
+	Name = "Phase Glove (Wait 5.475 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Phase",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Phase"
+
+            then
+                game:GetService("ReplicatedStorage").PhaseA:FireServer()
+                wait(5.475)       
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Phase Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

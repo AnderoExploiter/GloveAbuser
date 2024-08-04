@@ -1362,7 +1362,7 @@ local KrakenSection = BadgesGloveTab:AddSection({
 })
 
 BadgesGloveTab:AddButton({
-	Name = "Activate Kraken (Hold The Glove)",
+	Name = "Activate Kraken",
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Kraken"
 

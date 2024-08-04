@@ -1301,8 +1301,8 @@ BadgesGloveTab:AddButton({
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Dominance"
 
             then
-                game:GetService("ReplicatedStorage").DominanceAc:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
-                wait(3.1)
+            game:GetService("ReplicatedStorage").DominanceAc:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
+            wait(3.1)
 
                 OrionLib:MakeNotification({
                     Name = "Restored",
@@ -1317,6 +1317,39 @@ BadgesGloveTab:AddButton({
                 OrionLib:MakeNotification({
                     Name = "Error!",
                     Content = "Equip Dominance Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local VoodooSection = BadgesGloveTab:AddSection({
+	Name = "Voodoo Glove (Wait 6.27 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Voodoo (Hold The Glove)",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Voodoo"
+
+            then
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                task.wait(6.27)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Voodoo Glove",
                     Image = "rbxassetid://4483345998",
                     Time = 5
                 })

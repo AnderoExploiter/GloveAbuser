@@ -1389,3 +1389,37 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local CounterSection = BadgesGloveTab:AddSection({
+	Name = "Counter Glove (Wait 6.2 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Counter",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Counter"
+
+            then
+                game:GetService("ReplicatedStorage").Counter:FireServer()
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 20
+                task.wait(6.2)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Counter Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

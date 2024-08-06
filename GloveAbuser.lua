@@ -1456,3 +1456,69 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local RojoSection = BadgesGloveTab:AddSection({
+	Name = "Rojo Glove"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Rojo",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Rojo"
+
+            then
+                game:GetService("ReplicatedStorage"):WaitForChild("RojoAbility"):FireServer("Release", {game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})
+                wait(7)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Rojo Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})
+
+local DruidSection = BadgesGloveTab:AddSection({
+	Name = "Druid Glove (Wait 3.21 cooldown or get kicked)"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Druid",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Druid"
+
+            then
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+                task.wait(3.21)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Druid Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

@@ -1522,3 +1522,36 @@ BadgesGloveTab:AddButton({
             end
   	end    
 })
+
+local FrostbiteSection = BadgesGloveTab:AddSection({
+	Name = "Frostbite Glove"
+})
+
+BadgesGloveTab:AddButton({
+	Name = "Activate Frostbite",
+	Callback = function()
+      		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Frostbite"
+
+            then
+                game:GetService("ReplicatedStorage").GeneralAbility:FireServer(2)
+                task.wait(5)
+
+                OrionLib:MakeNotification({
+                    Name = "Restored",
+                    Content = "You can use ability",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+
+
+            else
+
+                OrionLib:MakeNotification({
+                    Name = "Error!",
+                    Content = "Equip Frostbite Glove",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+  	end    
+})

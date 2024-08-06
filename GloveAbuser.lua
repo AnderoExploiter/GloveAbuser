@@ -1,5 +1,49 @@
---Sans Gay
+--Functions
+function DiamondActivate()
+    game:GetService("ReplicatedStorage").Rockmode:FireServer()
+    return DiamondActivate
+  end
 
+  function DiamondDeactivate()
+    game:GetService("ReplicatedStorage").DeactivateRockmode:FireServer()
+    return DiamondDeactivate
+  end
+  
+  function DiamondDeactivate()
+    game:GetService("ReplicatedStorage").DeactivateRockmode:FireServer()
+    return DiamondDeactivate
+  end
+
+  function ZZZZZZZActivate()
+    game:GetService("ReplicatedStorage").ZZZZZZZSleep:FireServer()
+    return ZZZZZZZActivate
+  end
+
+  function BrickActivate()
+    game:GetService("ReplicatedStorage").lbrick:FireServer()
+    return BrickActivate
+  end
+
+  function GhostActivate()
+    game:GetService("ReplicatedStorage").Ghostinvisibilityactivated:FireServer()
+    return GhostActivate
+  end
+
+  function GhostDectivate()
+    game:GetService("ReplicatedStorage").Ghostinvisibilitydeactivated:FireServer()
+    return GhostDectivate
+  end
+
+  function StunActivate()
+    local args = {
+        [1] = game:GetService("Players").LocalPlayer.Character.Stun
+        }  
+        game:GetService("ReplicatedStorage").StunR:FireServer(unpack(args))
+    return StunActivate
+  end
+  
+
+--Script use
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/GeneralAbility.lua"))()
 print("Made By N | O | T | S | I | V | Y")
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
@@ -58,7 +102,7 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond"
             then
-                game:GetService("ReplicatedStorage").Rockmode:FireServer()
+                DiamondActivate()
                 --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateRockMode.lua"))()
             else
                 OrionLib:MakeNotification({
@@ -76,7 +120,7 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Diamond"
             then
-                game:GetService("ReplicatedStorage").DeactivateRockmode:FireServer()
+                DiamondDeactivate()
                 --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/DeactivateRockMode.lua"))()
             else
 
@@ -99,7 +143,7 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "ZZZZZZZ"
             then
-                game:GetService("ReplicatedStorage").ZZZZZZZSleep:FireServer()
+                ZZZZZZZActivate()
                 --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateZZZZZZZ.lua"))()
             else
 
@@ -122,7 +166,7 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Brick"
             then
-                game:GetService("ReplicatedStorage").lbrick:FireServer()
+                BrickActivate()
                 --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateBrick.lua"))()
                 wait(1.1)
                 OrionLib:MakeNotification({
@@ -152,7 +196,7 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost"
             then
-                game:GetService("ReplicatedStorage").Ghostinvisibilityactivated:FireServer()
+                GhostActivate()
                 --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/EnterGhost.lua"))()
             else
 
@@ -171,7 +215,7 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Ghost"
             then
-                game:GetService("ReplicatedStorage").Ghostinvisibilitydeactivated:FireServer()
+                GhostDectivate()
                 --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/DeactivateGhost.lua"))()
             else
 
@@ -194,10 +238,7 @@ MainTab:AddButton({
 	Callback = function()
       		if game.Players.LocalPlayer.leaderstats.Glove.Value == "Stun"
             then
-                local args = {
-                    [1] = game:GetService("Players").LocalPlayer.Character.Stun
-                    }  
-                    game:GetService("ReplicatedStorage").StunR:FireServer(unpack(args))
+                StunActivate()
                 --loadstring(game:HttpGet("https://raw.githubusercontent.com/AnderoExploiter/GloveAbuser/main/Events/ActivateStun.lua"))()
                 wait(10.1)
                 OrionLib:MakeNotification({
